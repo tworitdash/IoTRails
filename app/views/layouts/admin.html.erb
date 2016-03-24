@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agri | <%= @page_title || "Admin Area" %></title>
+  <%= stylesheet_link_tag    'application', 'admin', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id = "header">
+	<h1>IoT</h1>
+</div>
+
+<div id = "main">
+	<% if !flash[:notice].blank? %>
+  <div class = "notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+<div id = "content">
+	<%= yield %>
+</div>
+</div>
+
+
+<footer id = "footer">
+	<p id="copyright">&copy; tworitdash.in</p> 
+</footer>
+
+
+</body>
+</html>

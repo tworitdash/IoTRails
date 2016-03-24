@@ -1,0 +1,37 @@
+<% @page_title = "Tweets" %>
+
+<div class = "Your Tweets">
+  <h2>Tweets</h2>
+  <%= link_to("Tweet Here", :action => 'new') %>
+
+  <table class = "listing" summary = "Subject List">
+    <tr class = "header">
+           
+      <th>Created At</th>
+      <th>Tweet</th>
+
+<% @tweet.each do |tweet| %>
+  <tr>
+    <td><%=  tweet.created_at %></td>
+    <td><%=  tweet.tweet %></td>
+    
+    <td class = "actions">
+      <%= link_to("Show", {:action => 'show', :id => tweet.id}, :class => 'action show') %>
+      
+      <%= link_to("Delete", {:action => 'delete', :id => tweet.id}, :class => 'action delete') %>
+    </td>
+  </tr>
+<% end %>
+</table>
+</div>
+
+<div class = "menu">
+  <h2>User Menu</h2>
+  <div class = "identity">Logged in as: <%= session[:username] %></div>
+  <ul>
+    
+    <li><%= link_to("Log Out", :controller => 'access', :action => 'logout') %></li>
+
+  </ul>
+</div>
+

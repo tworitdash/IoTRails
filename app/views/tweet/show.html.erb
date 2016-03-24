@@ -1,0 +1,32 @@
+<%= link_to("<< Back to list", {:action => 'list'}, :class => 'back-link') %>
+
+<div class = "subject show">
+  <h2> Show Tweet </h2>
+
+  <table summary = "Subject Detail View">
+    <tr>
+      <th>User</th>
+      <td>@<%= @user.username %></td>
+    </tr>
+    <tr>
+      <th>Tweet</th>
+      <td><%= @tweet.tweet %></td>
+    </tr>
+    
+    <tr>
+      <th>Created At</th>
+      <td><%= @tweet.created_at %></td>
+    </tr>
+    
+    
+  </table>
+</div>
+<div class = "menu">
+  <h2>User Menu</h2>
+  <div class = "identity">Logged in as: <%= session[:username] %></div>
+  <ul>
+    
+    <li><%= link_to("Log Out", :controller => 'access', :action => 'logout') %></li>
+
+  </ul>
+</div>

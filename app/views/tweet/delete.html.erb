@@ -1,0 +1,24 @@
+<%= link_to("<< Back to list", {:action => 'list'}, :class => 'back-link') %>
+
+<div class = "tweet edit">
+  <h2> Edit Subject </h2>
+ <%= form_for(:status, :url => {:action => 'destroy', :id => @tweet.id}) do |f|%>
+
+  <p> Are You Sure You want to Delete the Tweet ? </p>
+  <p class = "reference-name"><%= @tweet.tweet %></p>
+  
+  
+  <div class = "form-buttons">
+    <%= submit_tag("Delete Tweet")%>
+  </div>
+<% end %>
+</div>
+<div class = "menu">
+  <h2>User Menu</h2>
+  <div class = "identity">Logged in as: <%= session[:username] %></div>
+  <ul>
+    
+    <li><%= link_to("Log Out", :controller => 'access', :action => 'logout') %></li>
+
+  </ul>
+</div>

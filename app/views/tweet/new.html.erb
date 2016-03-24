@@ -1,0 +1,27 @@
+<%= link_to("<< Back to list", {:action => 'list'}, :class => 'back-link') %>
+
+<div class = "tweet show">
+  <h2> Create Subject </h2>
+ <%= form_for(:status, :url => {:action => 'create'}) do |f|%>
+  <table summary = "Tweet Form Fields">
+    <tr>
+      <th>Write Your Tweet Here</th>
+      <td><%= f.text_field(:tweet) %></td>
+    </tr>
+    <tr>
+      <td>Send Tweet</td>
+      <td><%= submit_tag("Submit Tweet") %></td>
+    </tr>
+  </table>
+  
+<% end %>
+</div>
+<div class = "menu">
+  <h2>User Menu</h2>
+  <div class = "identity">Logged in as: <%= session[:username] %></div>
+  <ul>
+    
+    <li><%= link_to("Log Out", :controller => 'access', :action => 'logout') %></li>
+
+  </ul>
+</div>
